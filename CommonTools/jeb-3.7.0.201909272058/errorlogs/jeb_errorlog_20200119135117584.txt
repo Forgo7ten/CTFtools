@@ -1,0 +1,22 @@
+logversion: 2
+product: JEB
+timestamp: 20200119135117584
+version: 3.7.0.201909272058
+userid: 1337
+licenseid: 1337
+build: pro
+system: Windows+10+10.0+amd64
+java: Oracle+Corporation+1.8.0_231
+locale: zh_CN
+memory-usage: used%3D338.4M%2Calloc%3D485.5M%2Cmax%3D7.1G
+stacktrace: java.lang.RuntimeException%3A+java.lang.InterruptedException%0D%0A%09at+com.pnfsoftware.jeb.util.base.Throwables.rethrowUnchecked%28SourceFile%3A68%29%0D%0A%09at+com.pnfsoftware.jeb.corei.parsers.dexdec.NS.eO%28SourceFile%3A920%29%0D%0A%09at+com.pnfsoftware.jeb.corei.parsers.dexdec.NS.XV%28SourceFile%3A932%29%0D%0A%09at+com.pnfsoftware.jeb.corei.parsers.dexdec.NS.decompileMethod%28SourceFile%3A946%29%0D%0A%09at+com.pnfsoftware.jeb.corei.parsers.dexdec.NS.decompileClass%28SourceFile%3A1073%29%0D%0A%09at+com.pnfsoftware.jeb.corei.parsers.dexdec.NS.decompile%28SourceFile%3A340%29%0D%0A%09at+com.pnfsoftware.jeb.rcpclient.handlers.HandlerUtil%242.call%28HandlerUtil.java%3A219%29%0D%0A%09at+com.pnfsoftware.jeb.rcpclient.handlers.HandlerUtil%242.call%28HandlerUtil.java%3A212%29%0D%0A%09at+com.pnfsoftware.jeb.util.concurrent.ThreadEx.run%28SourceFile%3A52%29%0D%0ACaused+by%3A+java.lang.InterruptedException%0D%0A%09at+java.lang.Object.wait%28Native+Method%29%0D%0A%09at+java.lang.Thread.join%28Thread.java%3A1252%29%0D%0A%09at+com.pnfsoftware.jeb.corei.parsers.dexdec.NS.eO%28SourceFile%3A904%29%0D%0A%09...+7+more%0D%0A
+backend-plugins-generic: %5BDynamic+JNI+Detection+Plugin%3A1.0.2%2C+Android+Code+Signature+Generator%3A1.1.3%2C+Android+Code+Recognition%3A1.1.3%2C+VT+Report+Plugin%3A1.0.0%5D
+backend-plugins-parsers: %5BXML+reader%3A1.0.0%2C+Generic+HTML%2FXML+reader%3A0.1.0%2C+JSON+parser%3A0.1.0%2C+Certificate+parser%3A1.0.0%2C+APK+parser%3A1.1.0%2C+APK+Extension+file+parser%3A1.0.1%2C+ODEX+parser%3A0.1.0%2C+DEX+parser%3A1.0.0%2C+vdex+pseudo-plugin+%28identifier+only%29%3A1.0.0%2C+cdex+pseudo-plugin+%28identifier+only%29%3A1.0.0%2C+art+pseudo-plugin+%28identifier+only%29%3A1.0.0%2C+Android+arsc+decoder%3A1.0.0%2C+Android+meta-arsc+decoder%3A1.0.0%2C+Mach-O+fat+files+loader%3A0.0.1%2C+Java+Classfile+parser%3A0.0.1%2C+JAR+parser%3A1.0.0%2C+ZIP+archive+handler%3A0.3.0%2C+7z+archive+handler%3A0.1.0%2C+Tar+archive+handler%3A0.1.0%2C+Gzip+archive+handler%3A0.1.0%2C+CRX+handler%3A1.0.0%2C+DEX+Decompiler%3A1.1.0%2C+Android+Debugger%3A0.2.0%2C+GDB%2FLLDB+client+debugger+unit%3A0.1.0%2C+PE+loader%3A0.0.1%2C+ELF+loader%3A0.0.1%2C+Microsoft+COFF+loader%3A0.0.1%2C+AR+archive+parser%3A0.0.1%2C+Mach-O+loader%3A0.0.1%2C+Intel+HEX%3A0.1.0%2C+Intel+x86%3A0.1.0%2C+AMD64%3A0.1.0%2C+ARM%3A0.1.0%2C+ARM+Thumb%3A0.1.0%2C+Aarch64%3A0.1.0%2C+MIPS%3A0.1.0%2C+MIPS64%3A0.1.0%2C+AVR+Disassembler%3A0.0.1%2C+X86+Decompiler%3A0.0.1%2C+x86-64+Decompiler%3A0.0.1%2C+ARM+Decompiler%3A0.0.1%2C+Aarch64+Decompiler%3A0.0.1%2C+MIPS+Decompiler%3A0.0.1%2C+WebAssembly+module%3A0.0.1%2C+WebAssembly+Disassembler%3A0.1.0%2C+WebAssembly+Decompiler%3A0.0.1%2C+Ethereum+contract+parser%3A0.0.1%2C+EVM+Disassembler%3A0.1.0%2C+EVM+Decompiler%3A0.2.0%2C+Image+reader%3A1.0.0%2C+Libra+contract+parser%3A0.1.0%2C+Libra+Disassembler%3A0.1.0%2C+Libra+Decompiler%3A0.1.0%2C+OAT+File+Unit%3A1.0.8%2C+PDF+parser%3A1.0.4%5D
+project-reloaded: false
+project-sha256: 
+project-filesize: -1
+artifacts-sha256-list: 34688A9447A20482364F7353A4745FA56E23014B24AA738DDA3682FBB726F519
+artifacts-filesize-list: 1448501
+artifacts-header-list: 504B0304140008080800416432500000
+up-set: true%3Btrue
+eltsig: Lcom%2Fexample%2Fsign%2FMainActivity%3B-%3E%3Cclinit%3E%28%29V

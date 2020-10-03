@@ -1,0 +1,8 @@
+// WinHex license file
+
+Name: Ponsonnet Olivier
+Addr: Ponsonnet@Olivium.Fr
+Addr: 13 Rue Charle Nodier, Paris, France
+Data: F17957DA9203135FDC3C23B3EB3016E0
+Data: D5AC9B02BB3B99A4C419877AC2324A33
+Cksm: E736053A

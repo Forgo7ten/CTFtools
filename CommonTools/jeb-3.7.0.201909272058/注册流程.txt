@@ -1,0 +1,2 @@
+先打开./bin/keygen GUI.jar算号器
+然后打开jeb_wincon.bat

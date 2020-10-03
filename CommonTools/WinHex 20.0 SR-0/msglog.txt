@@ -1,0 +1,46 @@
+﻿WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  18:10:56  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  18:11:45  This change requires restarting WinHex to take effect.
+WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  18:12:44  This change requires restarting WinHex to take effect.
+WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  18:14:21  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:38:34  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:39:59  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:40:52  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:41:03  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:42:28  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:43:20  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:43:53  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:48:41  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:51:52  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:53:30  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  18:56:48  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  19:26:45  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  19:27:09  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  19:27:25  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  19:27:30  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  19:27:43  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  19:29:06  WinHex Sorry, the license codes found are incompatible with this version.
+WinHex 20.0 x86, User: Ponsonnet Olivier
+08/18/2020  21:21:44  An exception of type 216 (page protection fault, high or unknown impact) occurred at offset 1:00006E58. The problem was noted in the file "C:\Program Files\X-Ways\WinHex 20.0 SR-0\error.log". You could e-mail a copy of that file to mail@x-ways.com. Ideally add a brief description of what you were trying to do. We will analyze all submitted error.log files to fix errors.
+WinHex 20.0 x64, User: Ponsonnet Olivier
+08/18/2020  21:45:31  WinHex Sorry, the license codes found are incompatible with this version.
