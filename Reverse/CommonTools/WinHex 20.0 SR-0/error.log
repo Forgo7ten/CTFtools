@@ -1,0 +1,12 @@
+This file contains information about exception errors only, not other errors or general messages.
+
+--- *** ---
+
+08/18/2020, 21:21:44
+WinHex 20.0 x86, LL: 4
+Started 08/18/2020, 21:08:10 on Windows 7, SP 1 (64 bit)
+
+0 data window(s) open +0 threads
+SP: 0030FCAC = 0030FF78 - 0.7 KB
+RA: 1:001BAA45 1:001BA958 1:001BA8D8* 1:0006D1C7* ( 1:000AA6E7 ) ( 1:000678B4 ) 1:001B1848^ ( 1:001AB859 ) ( 1:001AB9D1 ) 
+An exception of type 216 (page protection fault, high or unknown impact) occurred at offset 1:00006E58 when I [please complete]...

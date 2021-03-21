@@ -1,0 +1,19 @@
+内存使用率: 245.5M allocated (56.9M used, 188.6M free) - max: 7.1G
+JEB 3.7.0.201909272058 (pro) is starting...
+当前目录: E:\Lily\Tools\re\Android\jeb-3.7.0.201909272058\bin\app
+基础目录: E:\Lily\Tools\re\Android\jeb-3.7.0.201909272058
+程序目录: E:\Lily\Tools\re\Android\jeb-3.7.0.201909272058\bin
+System: Windows 10 10.0 (amd64) zh_CN
+Java: Oracle Corporation 1.8.0_241
+Plugin loaded: com.pnf.plugin.androidjnihelper.DynamicJNIDetectionPlugin
+Plugin loaded: com.pnf.libravm.LibraIdentifier
+Plugin loaded: com.pnf.libravm.LibraDisassemblerPlugin
+Plugin loaded: com.pnf.libravm.LibraDecompilerPlugin
+Plugin loaded: com.pnf.androsig.gen.AndroidSigGenPlugin
+Plugin loaded: com.pnf.androsig.apply.andsig.AndroidSigApplyPlugin
+Plugin loaded: com.pnf.plugin.oat.OATPlugin
+Plugin loaded: com.pnf.plugin.pdf.PdfPlugin
+Creating a new project (primary file: C:\Users\Palmer\Desktop\widc.apk.1)
+Adding artifact to project: C:\Users\Palmer\Desktop\widc.apk.1
+{widc.apk.1 > widc.apk.1}: 261 resource files were adjusted
+Decompiling at Lcom/example/ctf/ctf/MainActivity;->btn:Landroid/widget/Button;
