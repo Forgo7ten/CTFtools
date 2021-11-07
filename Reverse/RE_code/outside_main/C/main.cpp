@@ -25,28 +25,28 @@ int after_main()
 }
 
 /*
-__CRTInitÖÐ×öÒ»Ð©³õÊ¼»¯¹¤×÷£º
-°üÀ¨C¿â¡¢CµÄ³õÊ¼»¯º¯Êý£¬C++¿â¡¢C++µÄ³õÊ¼»¯º¯ÊýµÈ¡£
-CºÍC++·Ö±ðÓÐÒ»ÕÅ±íÀ´±£´æ³õÊ¼»¯º¯ÊýÖ¸Õë£¬
-Ã¿¸ö±íÓÖÊ¹ÓÃ2¸öÖ¸ÕëÀ´Ã÷È··¶Î§£¬
-__CRTInit»áÒÀ´Îµ÷ÓÃÕâ2¸ö±íÖÐµÄº¯Êý¡£
-C³õÊ¼»¯º¯Êý±í£º[ __xi_a, __xi_z]
-C++³õÊ¼»¯º¯Êý±í: [ __xc_a, __xc_z]
-ÏÖÔÚ¶ÔÕÕ´úÂë×¢ÊÍ£¬¾Í»áÃ÷°×ÉÏÊöÄÇ¶Î´úÂëµÄ×÷ÓÃ¡£
-Í¨¹ýÌØÊâµÄ¶ÎÃû³Æ¡°.CRT$XIU¡±£¬¡°.CRT$XCU¡±£¬
-Á´½ÓÆ÷»á°Ñbefore1±í·ÅÔÚ¡°C³õÊ¼»¯º¯Êý±í¡±ÖÐ£¬ÀàËÆÕâÑù
+__CRTInitä¸­åšä¸€äº›åˆå§‹åŒ–å·¥ä½œï¼š
+åŒ…æ‹¬Cåº“ã€Cçš„åˆå§‹åŒ–å‡½æ•°ï¼ŒC++åº“ã€C++çš„åˆå§‹åŒ–å‡½æ•°ç­‰ã€‚
+Cå’ŒC++åˆ†åˆ«æœ‰ä¸€å¼ è¡¨æ¥ä¿å­˜åˆå§‹åŒ–å‡½æ•°æŒ‡é’ˆï¼Œ
+æ¯ä¸ªè¡¨åˆä½¿ç”¨2ä¸ªæŒ‡é’ˆæ¥æ˜Žç¡®èŒƒå›´ï¼Œ
+__CRTInitä¼šä¾æ¬¡è°ƒç”¨è¿™2ä¸ªè¡¨ä¸­çš„å‡½æ•°ã€‚
+Cåˆå§‹åŒ–å‡½æ•°è¡¨ï¼š[ __xi_a, __xi_z]
+C++åˆå§‹åŒ–å‡½æ•°è¡¨: [ __xc_a, __xc_z]
+çŽ°åœ¨å¯¹ç…§ä»£ç æ³¨é‡Šï¼Œå°±ä¼šæ˜Žç™½ä¸Šè¿°é‚£æ®µä»£ç çš„ä½œç”¨ã€‚
+é€šè¿‡ç‰¹æ®Šçš„æ®µåç§°â€œ.CRT$XIUâ€ï¼Œâ€œ.CRT$XCUâ€ï¼Œ
+é“¾æŽ¥å™¨ä¼šæŠŠbefore1è¡¨æ”¾åœ¨â€œCåˆå§‹åŒ–å‡½æ•°è¡¨â€ä¸­ï¼Œç±»ä¼¼è¿™æ ·
 [__xi_a, ..., before1(xiu), ..., __xi_z].
-Í¬Àí£¬before2±í»á±»Á´½ÓÆ÷·ÅÔÚ¡°C++³õÊ¼»¯º¯Êý±í¡±ÖÐ£¬ÏóÕâÑù
-[__xc_a, ..., before2(xcu), ..., __xc_z]£¬
+åŒç†ï¼Œbefore2è¡¨ä¼šè¢«é“¾æŽ¥å™¨æ”¾åœ¨â€œC++åˆå§‹åŒ–å‡½æ•°è¡¨â€ä¸­ï¼Œè±¡è¿™æ ·
+[__xc_a, ..., before2(xcu), ..., __xc_z]ï¼Œ
 */
 
 typedef int func();
 
 #pragma data_seg(".CRT$XIU")  
-static func* before1[] = { before_main1 }; // ·ÅÈëC³õÊ¼»¯º¯Êý±íÖÐ£¨CÓïÑÔº¯ÊýÓÃÕâ¸ö£©
+static func* before1[] = { before_main1 }; // æ”¾å…¥Cåˆå§‹åŒ–å‡½æ•°è¡¨ä¸­ï¼ˆCè¯­è¨€å‡½æ•°ç”¨è¿™ä¸ªï¼‰
 
 #pragma data_seg(".CRT$XCU")  
-static func* before2[] = { before_main2 }; // ·ÅÈëC++³õÊ¼»¯º¯Êý±íÖÐ£¨C++º¯ÊýÓÃÕâ¸ö£©
+static func* before2[] = { before_main2 }; // æ”¾å…¥C++åˆå§‹åŒ–å‡½æ•°è¡¨ä¸­ï¼ˆC++å‡½æ•°ç”¨è¿™ä¸ªï¼‰
 
 #pragma data_seg() 
 
