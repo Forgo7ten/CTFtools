@@ -18,9 +18,13 @@
    python archive_viewer.py [filename]
    ```
 
-3. `pyinstxtractor.py`文件
+3. `pyinstxtractor.py`文件 [extremecoders-re/pyinstxtractor: PyInstaller Extractor (github.com)](https://github.com/extremecoders-re/pyinstxtractor)
 
    将exe反编译为pyc文件
+
+
+
+有`-key`参数Pyinstaller逆向：[[原创\]Python逆向——Pyinstaller逆向-软件逆向-看雪论坛-安全社区|安全招聘|bbs.pediy.com](https://bbs.pediy.com/thread-271253.htm#msg_header_h1_2) | [Frequently Asked Questions · extremecoders-re/pyinstxtractor Wiki (github.com)](https://github.com/extremecoders-re/pyinstxtractor/wiki/Frequently-Asked-Questions)
 
 ## 使用步骤
 
