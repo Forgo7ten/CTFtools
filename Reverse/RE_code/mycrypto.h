@@ -8,32 +8,32 @@
 #include <string.h>
 #include <math.h>
 
-void tea_encode(uint32_t* origin, uint32_t* key);//tea¼ÓÃÜ
-void tea_decode(uint32_t* origin, uint32_t* key);//tea½âÃÜ
-void xtea_encode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key[4]);//xxtea¼ÓÃÜ
-void xtea_decode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key[4]);//xxtea½âÃÜ
-void rc4_init(unsigned char* s, unsigned char* key, unsigned long Len_k); //rc4³õÊ¼»¯º¯Êı
-void rc4_crypt(unsigned char* Data, unsigned long Len_D, unsigned char* key, unsigned long Len_k);//rc4¼Ó½âÃÜº¯Êı
-int base64_encode(const unsigned char* src, unsigned char* dst);//base64¼ÓÃÜ
-int base64_decode(const unsigned char* src, unsigned char* dst);//base64½âÃÜ
-void base64_myen(char* src, char* dst, char* mytable);//base64×Ô¶¨Òå×Ö·û±í¼ÓÃÜ
-void base64_myde(char* src, char* dst, char* mytable);//base64×Ô¶¨Òå×Ö·û±í½âÃÜ
-unsigned __int64 crc64decode(unsigned __int64 Dst);//crc64½âÃÜ
-void crc8encode(char* str);		//crc8Î»¼ÓÃÜ
-void crc8decode(char * str);	//crc8Î»½âÃÜ
+void tea_encode(uint32_t* origin, uint32_t* key);//teaåŠ å¯†
+void tea_decode(uint32_t* origin, uint32_t* key);//teaè§£å¯†
+void xtea_encode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key[4]);//xxteaåŠ å¯†
+void xtea_decode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key[4]);//xxteaè§£å¯†
+void rc4_init(unsigned char* s, unsigned char* key, unsigned long Len_k); //rc4åˆå§‹åŒ–å‡½æ•°
+void rc4_crypt(unsigned char* Data, unsigned long Len_D, unsigned char* key, unsigned long Len_k);//rc4åŠ è§£å¯†å‡½æ•°
+int base64_encode(const unsigned char* src, unsigned char* dst);//base64åŠ å¯†
+int base64_decode(const unsigned char* src, unsigned char* dst);//base64è§£å¯†
+void base64_myen(char* src, char* dst, char* mytable);//base64è‡ªå®šä¹‰å­—ç¬¦è¡¨åŠ å¯†
+void base64_myde(char* src, char* dst, char* mytable);//base64è‡ªå®šä¹‰å­—ç¬¦è¡¨è§£å¯†
+unsigned __int64 crc64decode(unsigned __int64 Dst);//crc64è§£å¯†
+void crc8encode(char* str);		//crc8ä½åŠ å¯†
+void crc8decode(char * str);	//crc8ä½è§£å¯†
 
 /****************
-ÒÔÏÂÊÇ´úÂë²¿·Ö
+ä»¥ä¸‹æ˜¯ä»£ç éƒ¨åˆ†
 ****************/
 
 #define tea_DELTA 0x9e3779b9
 
 
 /*
-tea¼ÓÃÜº¯Êı
-32ÂÖ¼ÓÃÜ£¬Çë¸ù¾İĞèÒª¸ü¸Ä
-uint32_t* origin   ÎªÒª¼ÓÃÜµÄÊı¾İÊÇÁ½¸ö32Î»ÎŞ·ûºÅÕûÊı
-uint32_t* key      Îª¼ÓÃÜ½âÃÜÃÜÔ¿£¬Îª4¸ö32Î»ÎŞ·ûºÅÕûÊı£¬¼´ÃÜÔ¿³¤¶ÈÎª128Î»
+teaåŠ å¯†å‡½æ•°
+32è½®åŠ å¯†ï¼Œè¯·æ ¹æ®éœ€è¦æ›´æ”¹
+uint32_t* origin   ä¸ºè¦åŠ å¯†çš„æ•°æ®æ˜¯ä¸¤ä¸ª32ä½æ— ç¬¦å·æ•´æ•°
+uint32_t* key      ä¸ºåŠ å¯†è§£å¯†å¯†é’¥ï¼Œä¸º4ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼Œå³å¯†é’¥é•¿åº¦ä¸º128ä½
 */
 void tea_encode(uint32_t* origin, uint32_t* key) {
     uint32_t v0 = origin[0], v1 = origin[1], sum = 0, i;           /* set up */
@@ -49,14 +49,14 @@ void tea_encode(uint32_t* origin, uint32_t* key) {
 
 
 /*
-tea½âÃÜº¯Êı
-32ÂÖ½âÃÜ£¬Çë¸ù¾İĞèÒª¸ü¸Ä
-uint32_t* origin   ÎªÒª¼ÓÃÜµÄÊı¾İÊÇÁ½¸ö32Î»ÎŞ·ûºÅÕûÊı
-uint32_t* key      Îª¼ÓÃÜ½âÃÜÃÜÔ¿£¬Îª4¸ö32Î»ÎŞ·ûºÅÕûÊı£¬¼´ÃÜÔ¿³¤¶ÈÎª128Î»
+teaè§£å¯†å‡½æ•°
+32è½®è§£å¯†ï¼Œè¯·æ ¹æ®éœ€è¦æ›´æ”¹
+uint32_t* origin   ä¸ºè¦åŠ å¯†çš„æ•°æ®æ˜¯ä¸¤ä¸ª32ä½æ— ç¬¦å·æ•´æ•°
+uint32_t* key      ä¸ºåŠ å¯†è§£å¯†å¯†é’¥ï¼Œä¸º4ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼Œå³å¯†é’¥é•¿åº¦ä¸º128ä½
 */
 void tea_decode(uint32_t* origin, uint32_t* key) {
     uint32_t v0 = origin[0], v1 = origin[1], i;  /* set up */
-    uint32_t delta = 0x9e3779b9, sum = delta << 5; //32ÂÖÔËËã£¬ËùÒÔÊÇ2µÄ5´Î·½£»16ÂÖÔËËã£¬ËùÒÔÊÇ2µÄ4´Î·½£»8ÂÖÔËËã£¬ËùÒÔÊÇ2µÄ3´Î·½/* a key schedule constant */
+    uint32_t delta = 0x9e3779b9, sum = delta << 5; //32è½®è¿ç®—ï¼Œæ‰€ä»¥æ˜¯2çš„5æ¬¡æ–¹ï¼›16è½®è¿ç®—ï¼Œæ‰€ä»¥æ˜¯2çš„4æ¬¡æ–¹ï¼›8è½®è¿ç®—ï¼Œæ‰€ä»¥æ˜¯2çš„3æ¬¡æ–¹/* a key schedule constant */
     uint32_t k0 = key[0], k1 = key[1], k2 = key[2], k3 = key[3];   /* cache key */
     for (i = 0; i < 32; i++) {                         /* basic cycle start */
         v1 -= ((v0 << 4) + k2) ^ (v0 + sum) ^ ((v0 >> 5) + k3);
@@ -68,10 +68,10 @@ void tea_decode(uint32_t* origin, uint32_t* key) {
 
 
 /*
-xtea¼ÓÃÜº¯Êı
-num_rounds         ¼ÓÃÜÂÖÊı
-uint32_t* origin   ÎªÒª¼ÓÃÜµÄÊı¾İÊÇÁ½¸ö32Î»ÎŞ·ûºÅÕûÊı
-uint32_t* k        Îª¼ÓÃÜ½âÃÜÃÜÔ¿£¬Îª4¸ö32Î»ÎŞ·ûºÅÕûÊı£¬¼´ÃÜÔ¿³¤¶ÈÎª128Î»
+xteaåŠ å¯†å‡½æ•°
+num_rounds         åŠ å¯†è½®æ•°
+uint32_t* origin   ä¸ºè¦åŠ å¯†çš„æ•°æ®æ˜¯ä¸¤ä¸ª32ä½æ— ç¬¦å·æ•´æ•°
+uint32_t* k        ä¸ºåŠ å¯†è§£å¯†å¯†é’¥ï¼Œä¸º4ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼Œå³å¯†é’¥é•¿åº¦ä¸º128ä½
 */
 void xtea_encode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key[4]) {
     unsigned int i;
@@ -86,10 +86,10 @@ void xtea_encode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key
 
 
 /*
-xtea½âÃÜº¯Êı
-num_rounds         ¼ÓÃÜÂÖÊı
-uint32_t* origin   ÎªÒª¼ÓÃÜµÄÊı¾İÊÇÁ½¸ö32Î»ÎŞ·ûºÅÕûÊı
-uint32_t* k        Îª¼ÓÃÜ½âÃÜÃÜÔ¿£¬Îª4¸ö32Î»ÎŞ·ûºÅÕûÊı£¬¼´ÃÜÔ¿³¤¶ÈÎª128Î»
+xteaè§£å¯†å‡½æ•°
+num_rounds         åŠ å¯†è½®æ•°
+uint32_t* origin   ä¸ºè¦åŠ å¯†çš„æ•°æ®æ˜¯ä¸¤ä¸ª32ä½æ— ç¬¦å·æ•´æ•°
+uint32_t* k        ä¸ºåŠ å¯†è§£å¯†å¯†é’¥ï¼Œä¸º4ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼Œå³å¯†é’¥é•¿åº¦ä¸º128ä½
 */
 void xtea_decode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key[4]) {
     unsigned int i;
@@ -102,30 +102,30 @@ void xtea_decode(unsigned int num_rounds, uint32_t origin[2], uint32_t const key
     origin[0] = v0; origin[1] = v1;
 }
 
-// xxtea¼ÓÃÜ½âÃÜ
+// xxteaåŠ å¯†è§£å¯†
 
 #define xxtea_MX (((z>>5^y<<2) + (y>>3^z<<4)) ^ ((sum^y) + (key[(p&3)^e] ^ z)))
 #if 0
-int main()//Àı×Ó
+int main()//ä¾‹å­
 {
     uint32_t v[2] = { 1,2 };
     uint32_t const k[4] = { 2,2,3,4 };
-    int n = 2; //nµÄ¾ø¶ÔÖµ±íÊ¾vµÄ³¤¶È£¬È¡Õı±íÊ¾¼ÓÃÜ£¬È¡¸º±íÊ¾½âÃÜ
-    // vÎªÒª¼ÓÃÜµÄÊı¾İÊÇÁ½¸ö32Î»ÎŞ·ûºÅÕûÊı
-    // kÎª¼ÓÃÜ½âÃÜÃÜÔ¿£¬Îª4¸ö32Î»ÎŞ·ûºÅÕûÊı£¬¼´ÃÜÔ¿³¤¶ÈÎª128Î»
-    printf("¼ÓÃÜÇ°Ô­Ê¼Êı¾İ£º%u %u\n", v[0], v[1]);
+    int n = 2; //nçš„ç»å¯¹å€¼è¡¨ç¤ºvçš„é•¿åº¦ï¼Œå–æ­£è¡¨ç¤ºåŠ å¯†ï¼Œå–è´Ÿè¡¨ç¤ºè§£å¯†
+    // vä¸ºè¦åŠ å¯†çš„æ•°æ®æ˜¯ä¸¤ä¸ª32ä½æ— ç¬¦å·æ•´æ•°
+    // kä¸ºåŠ å¯†è§£å¯†å¯†é’¥ï¼Œä¸º4ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼Œå³å¯†é’¥é•¿åº¦ä¸º128ä½
+    printf("åŠ å¯†å‰åŸå§‹æ•°æ®ï¼š%u %u\n", v[0], v[1]);
     xxtea(v, n, k);
-    printf("¼ÓÃÜºóµÄÊı¾İ£º%u %u\n", v[0], v[1]);
+    printf("åŠ å¯†åçš„æ•°æ®ï¼š%u %u\n", v[0], v[1]);
     xxtea(v, -n, k);
-    printf("½âÃÜºóµÄÊı¾İ£º%u %u\n", v[0], v[1]);
+    printf("è§£å¯†åçš„æ•°æ®ï¼š%u %u\n", v[0], v[1]);
     return 0;
 }
 #endif
 /*
-xxtea¼Ó½âÃÜº¯Êı£¬n>0¼ÓÃÜ£¬n<0½âÃÜ
-origin    ÎªÒª¼ÓÃÜµÄÊı¾İÊÇÁ½¸ö32Î»ÎŞ·ûºÅÕûÊı£¨Èô¼ÓÃÜ×Ö·û´®ÏÈ×ª»»Îª16½øÖÆÕûÊı£©
-n         µÄ¾ø¶ÔÖµ±íÊ¾vµÄ³¤¶È(¼´ÓĞ¼¸¸ö32Î»ÕûÊı)£¬È¡Õı±íÊ¾¼ÓÃÜ£¬È¡¸º±íÊ¾½âÃÜ
-key       Îª¼ÓÃÜ½âÃÜÃÜÔ¿£¬Îª4¸ö32Î»ÎŞ·ûºÅÕûÊı£¬¼´ÃÜÔ¿³¤¶ÈÎª128Î»
+xxteaåŠ è§£å¯†å‡½æ•°ï¼Œn>0åŠ å¯†ï¼Œn<0è§£å¯†
+origin    ä¸ºè¦åŠ å¯†çš„æ•°æ®æ˜¯ä¸¤ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼ˆè‹¥åŠ å¯†å­—ç¬¦ä¸²å…ˆè½¬æ¢ä¸º16è¿›åˆ¶æ•´æ•°ï¼‰
+n         çš„ç»å¯¹å€¼è¡¨ç¤ºvçš„é•¿åº¦(å³æœ‰å‡ ä¸ª32ä½æ•´æ•°)ï¼Œå–æ­£è¡¨ç¤ºåŠ å¯†ï¼Œå–è´Ÿè¡¨ç¤ºè§£å¯†
+key       ä¸ºåŠ å¯†è§£å¯†å¯†é’¥ï¼Œä¸º4ä¸ª32ä½æ— ç¬¦å·æ•´æ•°ï¼Œå³å¯†é’¥é•¿åº¦ä¸º128ä½
 */
 void xxtea_crypt(uint32_t* origin, int n, uint32_t const key[4])
 {
@@ -171,7 +171,7 @@ void xxtea_crypt(uint32_t* origin, int n, uint32_t const key[4])
 }
 
 
-void rc4_init(unsigned char* s, unsigned char* key, unsigned long Len_k) //³õÊ¼»¯º¯Êı
+void rc4_init(unsigned char* s, unsigned char* key, unsigned long Len_k) //åˆå§‹åŒ–å‡½æ•°
 {
     int i = 0, j = 0;
     char k[256] = { 0 };
@@ -183,19 +183,19 @@ void rc4_init(unsigned char* s, unsigned char* key, unsigned long Len_k) //³õÊ¼»
     for (i = 0; i < 256; i++) {
         j = (j + s[i] + k[i]) % 256;
         tmp = s[i];
-        s[i] = s[j]; //½»»»s[i]ºÍs[j]
+        s[i] = s[j]; //äº¤æ¢s[i]å’Œs[j]
         s[j] = tmp;
     }
 }
 
 /*
-RC4¼Ó½âÃÜº¯Êı
-unsigned char* Data     ¼Ó½âÃÜµÄÊı¾İ
-unsigned long Len_D     ¼Ó½âÃÜÊı¾İµÄ³¤¶È
-unsigned char* key      ÃÜÔ¿
-unsigned long Len_k     ÃÜÔ¿³¤¶È
+RC4åŠ è§£å¯†å‡½æ•°
+unsigned char* Data     åŠ è§£å¯†çš„æ•°æ®
+unsigned long Len_D     åŠ è§£å¯†æ•°æ®çš„é•¿åº¦
+unsigned char* key      å¯†é’¥
+unsigned long Len_k     å¯†é’¥é•¿åº¦
 */
-void rc4_crypt(unsigned char* Data, unsigned long Len_D, unsigned char* key, unsigned long Len_k) //¼Ó½âÃÜ
+void rc4_crypt(unsigned char* Data, unsigned long Len_D, unsigned char* key, unsigned long Len_k) //åŠ è§£å¯†
 {
     unsigned char s[256];
     rc4_init(s, key, Len_k);
@@ -206,7 +206,7 @@ void rc4_crypt(unsigned char* Data, unsigned long Len_D, unsigned char* key, uns
         i = (i + 1) % 256;
         j = (j + s[i]) % 256;
         tmp = s[i];
-        s[i] = s[j]; //½»»»s[x]ºÍs[y]
+        s[i] = s[j]; //äº¤æ¢s[x]å’Œs[y]
         s[j] = tmp;
         t = (s[i] + s[j]) % 256;
         Data[k] ^= s[t];
@@ -214,9 +214,9 @@ void rc4_crypt(unsigned char* Data, unsigned long Len_D, unsigned char* key, uns
 }
 
 /*
-base64¼ÓÃÜ
-const unsigned char* src    ĞèÒª¼ÓÃÜµÄÊı×é
-unsigned char* dst          ¼ÓÃÜÖ®ºó´æ´¢µÄÊı×é
+base64åŠ å¯†
+const unsigned char* src    éœ€è¦åŠ å¯†çš„æ•°ç»„
+unsigned char* dst          åŠ å¯†ä¹‹åå­˜å‚¨çš„æ•°ç»„
 */
 int base64_encode(const unsigned char* src, unsigned char* dst)
 {
@@ -251,9 +251,9 @@ int base64_encode(const unsigned char* src, unsigned char* dst)
 }
 
 /*
-base64½âÃÜ
-const unsigned char* src    ĞèÒª½âÃÜµÄ×Ö·û
-unsigned char* dst          ½âÃÜÖ®ºó´æ´¢µÄÊı×é
+base64è§£å¯†
+const unsigned char* src    éœ€è¦è§£å¯†çš„å­—ç¬¦
+unsigned char* dst          è§£å¯†ä¹‹åå­˜å‚¨çš„æ•°ç»„
 */
 int base64_decode(const unsigned char* src, unsigned char* dst)
 {
@@ -308,10 +308,10 @@ int base64_decode(const unsigned char* src, unsigned char* dst)
 }
 
 /*
-base64×Ô¶¨Òå×Ö·û±í¼ÓÃÜ
-char* src       ´æ·Å´ı¼ÓÃÜ×Ö·û´®µÄÊı×é
-char* dst       ´æ·Å¼ÓÃÜºó×Ö·û´®µÄÊı×é
-char* mytable   ×Ô¶¨Òå×Ö·û±í
+base64è‡ªå®šä¹‰å­—ç¬¦è¡¨åŠ å¯†
+char* src       å­˜æ”¾å¾…åŠ å¯†å­—ç¬¦ä¸²çš„æ•°ç»„
+char* dst       å­˜æ”¾åŠ å¯†åå­—ç¬¦ä¸²çš„æ•°ç»„
+char* mytable   è‡ªå®šä¹‰å­—ç¬¦è¡¨
 */
 void base64_myen(char* src, char*dst, char* mytable)
 {
@@ -333,10 +333,10 @@ void base64_myen(char* src, char*dst, char* mytable)
 }
 
 /*
-base64×Ô¶¨Òå×Ö·û±í½âÃÜ
-char* src       ´æ·Å´ı½âÃÜ×Ö·û´®µÄÊı×é
-char* dst       ´æ·Å½âÃÜºó×Ö·û´®µÄÊı×é
-char* mytable   ×Ô¶¨Òå×Ö·û±í
+base64è‡ªå®šä¹‰å­—ç¬¦è¡¨è§£å¯†
+char* src       å­˜æ”¾å¾…è§£å¯†å­—ç¬¦ä¸²çš„æ•°ç»„
+char* dst       å­˜æ”¾è§£å¯†åå­—ç¬¦ä¸²çš„æ•°ç»„
+char* mytable   è‡ªå®šä¹‰å­—ç¬¦è¡¨
 */
 void base64_myde(char* src, char* dst, char* mytable)
 {
@@ -358,10 +358,10 @@ void base64_myde(char* src, char* dst, char* mytable)
 }
 
 /*
-CRCÑ­»·Ğ£Ñé64Î»½âÃÜ
-DstÎª¼ÓÃÜÊı¾İ
-·µ»ØÖµÎª½âÃÜºóµÄÊı¾İ
-0xB0004B7679FA26B3ui64ÎªÒì»òµÄÖµĞèĞŞ¸Ä
+CRCå¾ªç¯æ ¡éªŒ64ä½è§£å¯†
+Dstä¸ºåŠ å¯†æ•°æ®
+è¿”å›å€¼ä¸ºè§£å¯†åçš„æ•°æ®
+0xB0004B7679FA26B3ui64ä¸ºå¼‚æˆ–çš„å€¼éœ€ä¿®æ”¹
 */
 unsigned __int64 crc64decode(unsigned __int64 Dst)
 {
@@ -377,8 +377,8 @@ unsigned __int64 crc64decode(unsigned __int64 Dst)
 }
 
 /*
-CRCÑ­»·Ğ£Ñé8Î»¼ÓÃÜ×Ö·û´®
-0x31ÎªÒì»òµÄÖµ¿ÉĞŞ¸Ä
+CRCå¾ªç¯æ ¡éªŒ8ä½åŠ å¯†å­—ç¬¦ä¸²
+0x31ä¸ºå¼‚æˆ–çš„å€¼å¯ä¿®æ”¹
 */
 void crc8encode(char* str)
 {
@@ -387,18 +387,18 @@ void crc8encode(char* str)
     for (j = 0; j < strlen(str); ++j)
     {
         crc = str[j];
-        /* Êı¾İÍù×óÒÆÁË8Î»£¬ĞèÒª¼ÆËã8´Î */
+        /* æ•°æ®å¾€å·¦ç§»äº†8ä½ï¼Œéœ€è¦è®¡ç®—8æ¬¡ */
         for (i = 8; i > 0; --i)
         {
-            if (crc & 0x80)  /* ÅĞ¶Ï×î¸ßÎ»ÊÇ·ñÎª1 */
+            if (crc & 0x80)  /* åˆ¤æ–­æœ€é«˜ä½æ˜¯å¦ä¸º1 */
             {
-                /* ×î¸ßÎ»Îª1£¬²»ĞèÒªÒì»ò£¬Íù×óÒÆÒ»Î»£¬È»ºóÓë0x31Òì»ò */
-                /* 0x31(¶àÏîÊ½£ºx8+x5+x4+1£¬100110001)£¬×î¸ßÎ»²»ĞèÒªÒì»ò£¬Ö±½ÓÈ¥µô */
+                /* æœ€é«˜ä½ä¸º1ï¼Œä¸éœ€è¦å¼‚æˆ–ï¼Œå¾€å·¦ç§»ä¸€ä½ï¼Œç„¶åä¸0x31å¼‚æˆ– */
+                /* 0x31(å¤šé¡¹å¼ï¼šx8+x5+x4+1ï¼Œ100110001)ï¼Œæœ€é«˜ä½ä¸éœ€è¦å¼‚æˆ–ï¼Œç›´æ¥å»æ‰ */
                 crc = (crc << 1) ^ 0x31;
             }
             else
             {
-                /* ×î¸ßÎ»Îª0Ê±£¬²»ĞèÒªÒì»ò£¬ÕûÌåÊı¾İÍù×óÒÆÒ»Î» */
+                /* æœ€é«˜ä½ä¸º0æ—¶ï¼Œä¸éœ€è¦å¼‚æˆ–ï¼Œæ•´ä½“æ•°æ®å¾€å·¦ç§»ä¸€ä½ */
                 crc = (crc << 1);
             }
         }
@@ -407,8 +407,8 @@ void crc8encode(char* str)
 }
 
 /*
-CRCÑ­»·Ğ£Ñé8Î»½âÃÜ×Ö·û´®
-0x31ÎªÒì»òµÄÖµ¿ÉĞŞ¸Ä
+CRCå¾ªç¯æ ¡éªŒ8ä½è§£å¯†å­—ç¬¦ä¸²
+0x31ä¸ºå¼‚æˆ–çš„å€¼å¯ä¿®æ”¹
 */
 void crc8decode(char * str)
 {
